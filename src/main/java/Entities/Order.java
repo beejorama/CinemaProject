@@ -7,6 +7,8 @@ public class Order {
 	private Customer customer;
 	private Date date;
 	
+	// Getters and Setters
+	
 	/**
 	 * @return the customer
 	 */

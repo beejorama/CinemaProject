@@ -3,7 +3,19 @@ package Entities;
 public class Screen {
 	
 	private int screenSize;
-	private int capacity;
+	private Seat[][] layout;
+	
+	/**
+	 * Standard constructor taking in a seat layout and screen size
+	 * @param layout
+	 * @param screenSize
+	 */
+	public Screen(Seat[][] layout, int screenSize){
+		this.layout = layout;
+		this.screenSize = screenSize;
+	}
+	
+	// Getters and Setters
 	
 	/**
 	 * @return the screenSize
@@ -18,18 +30,16 @@ public class Screen {
 		this.screenSize = screenSize;
 	}
 	/**
-	 * @return the capacity
+	 * @return the layout
 	 */
-	public int getCapacity() {
-		return capacity;
+	public Seat[][] getLayout() {
+		return layout;
 	}
 	/**
-	 * @param capacity the capacity to set
+	 * @param layout the layout to set
 	 */
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
+	public void setLayout(Seat[][] layout) {
+		this.layout = layout;
 	}
 	
-	
-
 }

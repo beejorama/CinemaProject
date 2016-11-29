@@ -7,6 +7,9 @@ public class Address {
 	private String line2;
 	private String town;
 	private String postcode;
+	private String county;
+	
+	// Getters and Setters
 	
 	/**
 	 * @return the customer
@@ -68,6 +71,19 @@ public class Address {
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
+	/**
+	 * @return the county
+	 */
+	public String getCounty() {
+		return county;
+	}
+	/**
+	 * @param county the county to set
+	 */
+	public void setCounty(String county) {
+		this.county = county;
+	}
+	
 	
 	
 

@@ -6,6 +6,8 @@ public class Review {
 	private int rating;
 	private String text;
 	
+	// Getters and Setters
+	
 	/**
 	 * @return the customer
 	 */

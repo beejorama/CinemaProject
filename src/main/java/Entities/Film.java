@@ -4,9 +4,12 @@ public class Film {
 	
 	private String title;
 	private String description;
+	private int year;
 	private int runtime;
 	private int avRating;
 	private String imgPath;
+	
+	// Getters and Setters
 
 	/**
 	 * @return the title
@@ -31,6 +34,18 @@ public class Film {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	/**
+	 * @return the year
+	 */
+	public int getYear() {
+		return year;
+	}
+	/**
+	 * @param year the year to set
+	 */
+	public void setYear(int year) {
+		this.year = year;
 	}
 	/**
 	 * @return the runtime

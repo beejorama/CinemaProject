@@ -11,6 +11,21 @@ public class Customer {
 	private String salt;
 	private Date DOB;
 	
+	// Interesting methods
+	
+	public boolean validatePassword(String input){
+		// if(input.scramble(salt) == hashPass){
+		// 		return true;
+		// }
+		// else{
+		// 		return false;
+		// }
+		return false;
+	}
+	
+	
+	// Getters and Setters
+	
 	/**
 	 * @return the firstname
 	 */
@@ -54,22 +69,10 @@ public class Customer {
 		return hashPass;
 	}
 	/**
-	 * @param hashPass the hashPass to set
-	 */
-	public void setHashPass(String hashPass) {
-		this.hashPass = hashPass;
-	}
-	/**
 	 * @return the salt
 	 */
 	public String getSalt() {
 		return salt;
-	}
-	/**
-	 * @param salt the salt to set
-	 */
-	public void setSalt(String salt) {
-		this.salt = salt;
 	}
 	/**
 	 * @return the dOB
