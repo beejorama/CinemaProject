@@ -1,13 +1,38 @@
 package Entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "Films")
 public class Film {
 	
+	@Column(name = "title")
 	private String title;
+	
+	@Column(name = "description")
 	private String description;
+	
+	@Column(name = "year")
 	private int year;
+	
+	@Column(name = "runtime")
 	private int runtime;
+	
+	@Column(name = "rating")
 	private int avRating;
+	
+	@Column(name = "imgPath")
 	private String imgPath;
+	
+	public Film(String title, String description, int year, int runtime, String imgPath){
+		this.title = title;
+		this.description = description;
+		this.year = year;
+		this.runtime = runtime;
+		this.imgPath = imgPath;
+	}
 	
 	// Getters and Setters
 

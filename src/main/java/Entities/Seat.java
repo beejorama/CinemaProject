@@ -1,7 +1,14 @@
 package Entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "Seats")
 public class Seat {
 	
+	@Column(name = "occupied")
 	private boolean occupied;
 	
 	/**

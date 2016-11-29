@@ -1,5 +1,10 @@
 package Entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "Tickets")
 public class Ticket {
 	
 	private Order order;

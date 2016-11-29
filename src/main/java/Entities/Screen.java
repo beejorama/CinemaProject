@@ -1,8 +1,17 @@
 package Entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "Screens")
 public class Screen {
 	
+	@Column(name = "size")
 	private int screenSize;
+	
+	@Column(name = "layout")
 	private Seat[][] layout;
 	
 	/**

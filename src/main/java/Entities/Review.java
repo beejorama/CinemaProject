@@ -1,9 +1,20 @@
 package Entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "Reviews")
 public class Review {
 	
+	@Column(name = "FKcustomerID")
 	private Customer customer;
+	
+	@Column(name = "rating")
 	private int rating;
+	
+	@Column(name = "text")
 	private String text;
 	
 	// Getters and Setters

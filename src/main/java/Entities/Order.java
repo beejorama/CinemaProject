@@ -2,9 +2,18 @@ package Entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "Orders")
 public class Order {
 	
+	@Column(name = "FKcustomerID")
 	private Customer customer;
+	
+	@Column(name = "date")
 	private Date date;
 	
 	// Getters and Setters

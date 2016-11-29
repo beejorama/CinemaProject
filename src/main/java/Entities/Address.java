@@ -1,12 +1,29 @@
 package Entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "Addresses")
 public class Address {
 	
+	@Column(name = "FKcustomerID")
 	private Customer customer;
+	
+	@Column(name = "line1")
 	private String line1;
+	
+	@Column(name = "line2")
 	private String line2;
+	
+	@Column(name = "town")
 	private String town;
+	
+	@Column(name = "postcode")
 	private String postcode;
+	
+	@Column(name = "county")
 	private String county;
 	
 	// Getters and Setters

@@ -10,20 +10,7 @@ public class Customer {
 	private String hashPass;
 	private String salt;
 	private Date DOB;
-	
-	// Interesting methods
-	
-	public boolean validatePassword(String input){
-		// if(input.scramble(salt) == hashPass){
-		// 		return true;
-		// }
-		// else{
-		// 		return false;
-		// }
-		return false;
-	}
-	
-	
+		
 	// Getters and Setters
 	
 	/**

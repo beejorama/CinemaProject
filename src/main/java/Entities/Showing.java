@@ -2,11 +2,24 @@ package Entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "Showings")
 public class Showing {
 
+	@Column(name = "FKfilmID")
 	private Film film;
+	
+	@Column(name = "time")
 	private Date time;
+	
+	@Column(name = "FKscreenID")
 	private Screen screen;
+	
+	@Column(name = "seats")
 	private Seat[][] seats;
 	
 	/**
