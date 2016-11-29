@@ -4,12 +4,20 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table (name = "Showings")
 public class Showing {
 
+	@Id
+	@Column(name = "id")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private int id;
+	
 	@Column(name = "FKfilmID")
 	private Film film;
 	
@@ -20,7 +28,7 @@ public class Showing {
 	private Screen screen;
 	
 	@Column(name = "seats")
-	private Seat[][] seats;
+	private boolean[][] seats;
 	
 	/**
 	 * Constructor taking the film, time and screen
@@ -42,7 +50,7 @@ public class Showing {
 	 * @param col
 	 */
 	public void bookSeat(int row, int col){
-		seats[col][row].setOccupied(true);
+		seats[col][row] = true;
 	}
 	
 	/**
@@ -80,6 +88,20 @@ public class Showing {
 	 */
 	public void setScreen(Screen screen) {
 		this.screen = screen;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

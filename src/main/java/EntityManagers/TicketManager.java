@@ -12,11 +12,10 @@ public interface TicketManager {
 	public void persistTicket(Ticket input);
 	
 	// Read
-	public List<Ticket> getTicketByFilm(Film input);
-	public List<Ticket> getTicketByCustomer(Customer input);
-	public List<Ticket> getRecentTickets();
+	public List<Ticket> getTicketByFilm(int id);
+	public List<Ticket> getTicketByCustomer(String email);
 	
 	// Delete
-	public void deleteTicket(Ticket input);
+	public void deleteTicket(int id);
 
 }

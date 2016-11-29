@@ -14,13 +14,13 @@ public interface AddressManager {
 	public List<Address> getAddressByCustomer(Customer input);
 	
 	// Update
-	public void updateAddressLine1(String input);
-	public void updateAddressLine2(String input);
-	public void updateAddressTown(String input);
-	public void updateAddressPostcode(String input);
-	public void updateAddressCounty(String input);
+	public void updateAddressLine1(int id, String input);
+	public void updateAddressLine2(int id, String input);
+	public void updateAddressTown(int id, String input);
+	public void updateAddressPostcode(int id, String input);
+	public void updateAddressCounty(int id, String input);
 	
 	// Delete
-	public void deleteAddress(Address input);
+	public void deleteAddress(int id);
 
 }

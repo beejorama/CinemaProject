@@ -12,14 +12,14 @@ public interface ReviewManager {
 	public void persistReview(Review input);
 	
 	// Read
-	public List<Review> getReviewByFilm(Film input);
-	public List<Review> getReviewByCustomer(Customer input);
+	public List<Review> getReviewByFilm(int id);
+	public List<Review> getReviewByCustomer(String email);
 	
 	// Update
-	public void updateReviewRating(int input);
-	public void updateReviewText(String input);
+	public void updateReviewRating(int id, int input);
+	public void updateReviewText(int id, String input);
 	
 	// Delete
-	public void deleteReview(Review input);
+	public void deleteReview(int id);
 
 }

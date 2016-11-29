@@ -11,12 +11,12 @@ public interface CustomerManager {
 	public Customer getCustomerByEmail(String input);
 	
 	// Update
-	public void updateCustomerEmail(String input);
-	public void updateCustomerFirstname(String input);
-	public void updateCustomerSurname(String input);
-	public void updateCustomerPassword(String input);
+	public void updateCustomerEmail(String email, String input);
+	public void updateCustomerFirstname(String email, String input);
+	public void updateCustomerSurname(String email, String input);
+	public void updateCustomerPassword(String email, String input);
 	
 	// Delete
-	public void deleteCustomer(Customer input);
+	public void deleteCustomer(String email);
 	
 }

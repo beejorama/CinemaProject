@@ -11,17 +11,17 @@ public interface FilmManager {
 	
 	// Read
 	public List<Film> getFilmByTitle(String input);
-	public List<Film> getFilmByKeyword(String input);
 	public List<Film> getFilmByDecade(String input);
+	public Film getFilmById(int input);
 	
 	// Update
-	public void updateFilmTitle(String input);
-	public void updateFilmDescription(String input);
-	public void updateFilmRating();
-	public void updateFilmLength(int input);
-	public void updateFilmImage(String input);
+	public void updateFilmTitle(int id, String input);
+	public void updateFilmDescription(int id, String input);
+	public void updateFilmRating(int id);
+	public void updateFilmLength(int id, int input);
+	public void updateFilmImage(int id, String input);
 	
 	// Delete
-	public void deleteFilm(Film input);
+	public void deleteFilm(int id);
 
 }

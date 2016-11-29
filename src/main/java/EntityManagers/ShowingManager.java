@@ -13,15 +13,14 @@ public interface ShowingManager {
 	public void persistShowing(Showing input);
 	
 	// Read
-	public List<Showing> getShowingByFilm(Film input);
-	public List<Showing> getUpcomingShowings();
+	public List<Showing> getShowingByFilm(int id);
 	
 	// Update
-	public void updateShowingFilm(Film input);
-	public void updateShowingTime(Date input);
-	public void updateShowingScreen(Screen input);
+	public void updateShowingFilm(int id, Film input);
+	public void updateShowingTime(int id, Date input);
+	public void updateShowingScreen(int id, Screen input);
 	
 	// Delete
-	public void deleteShowing(Showing input);
+	public void deleteShowing(int id);
 
 }

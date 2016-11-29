@@ -55,6 +55,13 @@ public class Customer {
 	public String getHashPass() {
 		return hashPass;
 	}
+	
+	/**
+	 * @param input the hashPass to set
+	 */
+	public void setHashPass(String input){
+		hashPass = input;
+	}
 	/**
 	 * @return the salt
 	 */

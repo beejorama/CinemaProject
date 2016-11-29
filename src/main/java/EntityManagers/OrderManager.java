@@ -11,7 +11,6 @@ public interface OrderManager {
 	public void persistOrder(Order input);
 
 	// Read
-	public List<Order> getOrderByCustomer(Customer input);
-	public List<Order> getRecentOrders();
+	public List<Order> getOrderByCustomer(String email);
 	
 }

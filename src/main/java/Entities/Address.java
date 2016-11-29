@@ -2,11 +2,19 @@ package Entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table (name = "Addresses")
 public class Address {
+	
+	@Id
+	@Column(name = "id")
+	@GeneratedValue ( strategy = GenerationType.IDENTITY)
+	private int id;
 	
 	@Column(name = "FKcustomerID")
 	private Customer customer;
@@ -33,6 +41,18 @@ public class Address {
 	 */
 	public Customer getCustomer() {
 		return customer;
+	}
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
 	}
 	/**
 	 * @param customer the customer to set
