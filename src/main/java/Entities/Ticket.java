@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,8 +18,13 @@ public class Ticket {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "FKorderID")
+	@ManyToOne
+	@JoinColumn(name = "FKorderID")
 	private Order order;
+	
+	@ManyToOne
+	@JoinColumn(name = "FKshowingID")
+	private Showing showing;
 	
 	@Column(name = "row")
 	private int row;

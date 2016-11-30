@@ -1,15 +1,41 @@
 package Entities;
 
 import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 public class Customer {
 	
+	@Column(name = "firstname")
 	private String firstname;
+	
+	@Column(name = "surname")
 	private String surname;
+	
+	@Id
+	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "hashPass")
 	private String hashPass;
+	
+	@Column(name = "salt")
 	private String salt;
+	
+	@Column(name = "dob")
 	private Date DOB;
+	
+	@OneToMany(mappedBy = "customer")
+	private List<Address> addresses;
+	
+	@OneToMany(mappedBy = "customer")
+	private List<Order> orders;
+	
+	@OneToMany(mappedBy = "customer")
+	private List<Review> reviews;
 		
 	// Getters and Setters
 	

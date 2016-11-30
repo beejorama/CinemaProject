@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,14 +22,18 @@ public class Screen {
 	private int screenSize;
 	
 	@Column(name = "layout")
-	private boolean[][] layout;
+	private Seat[][] layout;
+	
+	@ManyToOne
+	@JoinColumn(name = "FKlocationID")
+	private Location location;
 	
 	/**
 	 * Standard constructor taking in a seat layout and screen size
 	 * @param layout
 	 * @param screenSize
 	 */
-	public Screen(boolean[][] layout, int screenSize){
+	public Screen(Seat[][] layout, int screenSize){
 		this.layout = layout;
 		this.screenSize = screenSize;
 	}
@@ -51,13 +57,13 @@ public class Screen {
 	/**
 	 * @return the layout
 	 */
-	public boolean[][] getLayout() {
+	public Seat[][] getLayout() {
 		return layout;
 	}
 	/**
 	 * @param layout the layout to set
 	 */
-	public void setLayout(boolean[][] layout) {
+	public void setLayout(Seat[][] layout) {
 		this.layout = layout;
 	}
 
@@ -73,6 +79,20 @@ public class Screen {
 	 */
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	/**
+	 * @return the location
+	 */
+	public Location getLocation() {
+		return location;
+	}
+
+	/**
+	 * @param location the location to set
+	 */
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 	
 }

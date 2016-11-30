@@ -1,10 +1,13 @@
 package Entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -33,6 +36,9 @@ public class Film {
 	
 	@Column(name = "imgPath")
 	private String imgPath;
+	
+	@OneToMany(mappedBy = "film")
+	private List<Showing> showings;
 	
 	public Film(String title, String description, int year, int runtime, String imgPath){
 		this.title = title;
@@ -132,6 +138,20 @@ public class Film {
 	 */
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
+	}
+
+	/**
+	 * @return the showings
+	 */
+	public List<Showing> getShowings() {
+		return showings;
+	}
+
+	/**
+	 * @param showings the showings to set
+	 */
+	public void setShowings(List<Showing> showings) {
+		this.showings = showings;
 	}
 
 }

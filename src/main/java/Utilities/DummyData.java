@@ -30,7 +30,7 @@ public class DummyData {
 		Film f1 = new Film("Pulp Fiction", "A cult classic by Tarantino", 1996, 120, "/path/to/img");
 		films.add(f1);
 		
-		Screen s1 = new Screen(new boolean[10][7], 400);
+		Screen s1 = new Screen(new Seat[10][7], 400);
 		screens.add(s1);
 		
 		Showing sh1 = new Showing(f1, new Date(), s1);

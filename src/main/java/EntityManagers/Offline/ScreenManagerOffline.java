@@ -7,6 +7,7 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import Entities.Screen;
+import Entities.Seat;
 import EntityManagers.ScreenManager;
 import Utilities.DummyData;
 
@@ -30,7 +31,7 @@ public class ScreenManagerOffline implements ScreenManager {
 		}
 	}
 
-	public void updateScreenLayout(int id, boolean[][] input) {
+	public void updateScreenLayout(int id, Seat[][] input) {
 		for(Screen s : dummyData.getScreens()){
 			if(s.getId() == id){
 				s.setLayout(input);

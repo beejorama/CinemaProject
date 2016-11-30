@@ -1,12 +1,16 @@
 package Entities;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,17 +22,22 @@ public class Showing {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "FKfilmID")
+	@ManyToOne
+	@JoinColumn(name = "FKfilmID")
 	private Film film;
 	
 	@Column(name = "time")
 	private Date time;
 	
-	@Column(name = "FKscreenID")
+	@ManyToOne
+	@JoinColumn(name = "FKscreenID")
 	private Screen screen;
 	
 	@Column(name = "seats")
-	private boolean[][] seats;
+	private Seat[][] seats;
+	
+	@OneToMany(mappedBy = "showing")
+	private List<Ticket> tickets;
 	
 	/**
 	 * Constructor taking the film, time and screen
@@ -50,7 +59,7 @@ public class Showing {
 	 * @param col
 	 */
 	public void bookSeat(int row, int col){
-		seats[col][row] = true;
+		seats[col][row].setOccupied(true);
 	}
 	
 	/**
@@ -103,7 +112,19 @@ public class Showing {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
+
+	/**
+	 * @return the seats
+	 */
+	public Seat[][] getSeats() {
+		return seats;
+	}
+
+	/**
+	 * @param seats the seats to set
+	 */
+	public void setSeats(Seat[][] seats) {
+		this.seats = seats;
+	}
 	
 }
