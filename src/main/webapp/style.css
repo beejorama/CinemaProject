@@ -9,12 +9,17 @@ body{
 	height: 100%;
 }
 
+h4{
+	margin: 0;
+}
+
 #headerBar{
-	background-color: #550000;
+	background-color: #6A1111;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	position: relative;
 	height: 45px;
+	border-bottom: solid 3px #000000;
 }
 
 #headerBar div{
@@ -25,7 +30,11 @@ body{
 }
 
 #logo{
-	position: absolute;
+	padding-left: 5px;
+	height: 45px;
+	margin-top: auto;
+	margin-bottom: auto; 
+	width: auto;
 }
 
 ul{
@@ -56,9 +65,26 @@ ul{
 	color: white;
 }
 
+#navigationContainer{
+	background-color: #550000;
+	width: 100% !important;
+	height: 25px;
+}
+
+#navigation{
+	width: 940px;
+}
+
+#bread{
+	float: right;
+	color: #ffdddd;
+	width: auto !important;
+	font-size: 14px;
+}
+
 a{
 	text-decoration: none;
-	color: #FFAAAA;
+	color: #FFDDDD;
 }
 
 a:hover{
@@ -67,18 +93,12 @@ a:hover{
 
 #banner{
 	line-height: 0;
-	border-top: solid 3px #000000;
-	border-bottom: solid 3px #000000;
-	background-image: url(img/inters.jpg);
-	background-size: 100% auto;
-	width: 100%;
-	height: 0;
-	padding-top: 32.16%;
 }
 
 #bannerimg{
 	width: 100%;
 	height: auto;
+	border-bottom: solid 3px #000000;
 }
 
 #content{
@@ -89,29 +109,21 @@ a:hover{
 	border-left: solid 2px #330000;
 	border-right: solid 2px #330000;
 	padding: 20px;
+	color: #FFDDDD;
 }
 
-#nowShowingLine{
+.pageTitle{
 	font-size: 20px;
-	padding-bottom: 20px;
-	color: #FFAAAA;
+	font-weight: bold;
+	padding-bottom: 15px;
+	border-bottom: solid 3px #6A1111;
 }
 
-#nowShowingLine a{
-	margin: 0;
-	font-size: 14px;
-	float: right;
+#contentMain{
+	padding-top: 20px;
 }
 
-#content div{
-	color: #FFAAAA;
-}
-
-#content .titleText{
-	text-align: center;
-	font-size: 145%;
-}
-
+/*Tiles on the home page*/
 .mainList{
 	display: table;
 	width: 97%;
@@ -146,13 +158,32 @@ a:hover{
 	height: auto;
 }
 
+/*List tiles from the What's On? page*/
+#whatsOnList{
+	display: inline-block;
+	border-bottom: solid 3px #6A1111;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#whatsOnList .filmthumb{
+	width: 350px;
+	height: auto;
+	float: left;
+	padding-right: 15px;
+}
+
+#whatsOnList .text{
+	vertical-align: top;
+}
+
 #footer{
-	background-color: #550000;
+	background-color: #6A1111;
 	text-align: center;
 	align-content: center;
 	width: 100%;
 	height: 50px;
-	color: #FFAAAA;
+	color: #FFDDDD;
 	border-top: solid 3px #000000;
 }
 
