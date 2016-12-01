@@ -21,6 +21,17 @@ public class FilmManagerOffline implements FilmManager{
 	public void persistFilm(Film input) {
 		dummyData.getFilms().add(input);
 	}
+	
+	public List<Film> getShowingFilms(){
+		List<Film> returnList = new ArrayList<Film>();
+		List<Film> searchList = dummyData.getFilms();
+		for(Film f : searchList){
+			if(f.isShowing()){
+				returnList.add(f);
+			}
+		}
+		return returnList;
+	}
 
 	public List<Film> getFilmByTitle(String input) {
 		List<Film> returnList = new ArrayList<Film>();

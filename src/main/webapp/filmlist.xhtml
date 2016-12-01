@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<ui:composition lang="en"
+	xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="template.xhtml">
+
+	<ui:define name="title">
+		What's On?
+	</ui:define>
+
+	<ui:define name="pageHeading">
+		What's On?
+	</ui:define>
+
+	<ui:define name="pageContent">
+		<!-- UI Repeat this for all films that are showing -->
+		<ui:repeat var="film" value="#{films.getShowingFilms()}">
+			<div id="whatsOnList">
+				<img class="filmthumb" src="#{film.imgPath}"/>
+				<a href="filmdetail.html"><h4><h:outputText value="#{film.title}"/></h4></a>
+				<p><h:outputText value="#{film.description}"/></p>
+			</div>
+		</ui:repeat>
+	</ui:define>
+</ui:composition>

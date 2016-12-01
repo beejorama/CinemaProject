@@ -10,6 +10,7 @@ public interface FilmManager {
 	public void persistFilm(Film input);
 	
 	// Read
+	public List<Film> getShowingFilms();
 	public List<Film> getFilmByTitle(String input);
 	public List<Film> getFilmByDecade(String input);
 	public Film getFilmById(int input);

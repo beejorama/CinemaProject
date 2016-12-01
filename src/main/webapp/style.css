@@ -133,7 +133,7 @@ a:hover{
 .mainList div{
 	display: table-cell;
 	text-align: center;
-	
+	padding-bottom: 20px;
 }
 
  .thumbpromo{

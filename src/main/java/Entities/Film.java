@@ -1,5 +1,6 @@
 package Entities;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -47,6 +48,17 @@ public class Film {
 		this.runtime = runtime;
 		this.imgPath = imgPath;
 	}
+	
+	// Interesting methods
+	public boolean isShowing(){
+		for(Showing s : showings){
+			if(s.getTime().compareTo(new Date()) > 0){
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	
 	// Getters and Setters
 

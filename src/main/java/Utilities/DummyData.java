@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
+
 import Entities.*;
 
+@Startup
+@Singleton
 public class DummyData {
 	
 	private List<Address> addresses;
@@ -27,7 +32,7 @@ public class DummyData {
 		showings = new ArrayList();
 		tickets = new ArrayList();
 		
-		Film f1 = new Film("Pulp Fiction", "A cult classic by Tarantino", 1996, 120, "/path/to/img");
+		Film f1 = new Film("Pulp Fiction", "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption. WHAT UP HOMIES", 1994, 120, "img/pulp.jpg");
 		films.add(f1);
 		
 		Screen s1 = new Screen(new Seat[10][7], 400);
