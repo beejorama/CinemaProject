@@ -18,18 +18,42 @@ public class FilmController implements Serializable{
 	@Inject
 	private FilmService filmService;
 	
+	private Film selectedFilm;
+	
+	// Interesting methods
+	
 	// Get featured films
 	
 	// Get showing films
 	public List<Film> getShowingFilms(){
-		List<Film> list = new ArrayList<Film>();
-		Film f = new Film("Whats up", "This is my film boss", 116, 200, "img/pulp.jpg");
-		list.add(f);
-		return list;
-		// return filmService.getShowingFilms();
+		return filmService.getShowingFilms();
 	}
 	
+	// Select a film to view
+	public String view(Film f){
+		selectedFilm = f;
+		return "filmdetail.xhtml";
+	}
+
 	// Get film by id
 	
+	
+	// Getters and setters
+	
+	/**
+	 * @return the selectedFilm
+	 */
+	public Film getSelectedFilm() {
+		return selectedFilm;
+	}
+
+	/**
+	 * @param selectedFilm the selectedFilm to set
+	 */
+	public void setSelectedFilm(Film selectedFilm) {
+		this.selectedFilm = selectedFilm;
+	}
+	
+
 
 }

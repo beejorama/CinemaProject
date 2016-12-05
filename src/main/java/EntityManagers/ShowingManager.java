@@ -17,7 +17,7 @@ public interface ShowingManager {
 	
 	// Update
 	public void updateShowingFilm(int id, Film input);
-	public void updateShowingTime(int id, Date input);
+	public void updateShowingTime(int id, int hour, int minute);
 	public void updateShowingScreen(int id, Screen input);
 	
 	// Delete

@@ -17,11 +17,22 @@
 	<ui:define name="pageContent">
 		<!-- UI Repeat this for all films that are showing -->
 		<ui:repeat var="film" value="#{films.getShowingFilms()}">
-			<div id="whatsOnList">
-				<img class="filmthumb" src="#{film.imgPath}"/>
-				<a href="filmdetail.html"><h4><h:outputText value="#{film.title}"/></h4></a>
-				<p><h:outputText value="#{film.description}"/></p>
-			</div>
+			<h:form>
+				<div id="whatsOnList">
+					<img class="filmthumb" src="#{film.imgPath}"/>
+					<h:commandLink action="#{films.view(film)}">
+						
+							<h2><h:outputText value="#{film.title}"/> (<h:outputText value="#{film.year}"/>)</h2>
+						
+					</h:commandLink>
+					<div class="filmtext">
+						<h4 class="tileHeading">Director: </h4><h:outputText value="#{film.director}"/>
+						<h4 class="tileHeading">Cast: </h4><h:outputText value="#{film.actors}"/>
+						<h4 class="tileHeading">Description: </h4><h:outputText value="#{film.description}"/>
+					</div>
+					<h:commandButton class="bookButton" action="#{films.view(film)}" value="Book now!"/>
+				</div>
+			</h:form>
 		</ui:repeat>
 	</ui:define>
 </ui:composition>

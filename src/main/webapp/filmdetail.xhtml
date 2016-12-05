@@ -1,21 +1,65 @@
 <!DOCTYPE html>
-<ui:composition lang="en"
-	xmlns="https://www.w3.org/1999/xhtml"
+<ui:composition lang="en" xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="template.xhtml">
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
 
 	<ui:define name="title">
-		Selected Film Detail
+		<h:outputText value="#{films.selectedFilm.title}" />
 	</ui:define>
 
 	<ui:define name="pageHeading">
-		Film Title
+		<h:outputText value="#{films.selectedFilm.title}" />
 	</ui:define>
 
 	<ui:define name="pageContent">
-		Insert content here
+		<!-- zSWdZVtXT7E -->
+		<div class='embed-container'>
+			<iframe id="trailerIFrame"
+				src='https://www.youtube.com/embed/tGpTpVyI_OQ' frameborder='0'
+				allowfullscreen='1' modestbranding='1' rel='0' showinfo='0'>
+
+				<script type="text/javascript">
+   					document.getElementById('trailerIFrame').onload = function() {
+        				trailerIFrame.setAttribute("src", )
+    				}
+				</script>
+			</iframe>
+		</div>
+
+
+		<div id="filmBlurb">
+			<h:form>
+				<img class="filmthumb" src="#{film.imgPath}" />
+				<div class="filmtext">
+					<h4 class="tileHeading">Director:</h4>
+					<h:outputText value="#{film.director}" />
+					<h4 class="tileHeading">Cast:</h4>
+					<h:outputText value="#{film.actors}" />
+					<h4 class="tileHeading">Description:</h4>
+					<h:outputText value="#{film.description}" />
+				</div>
+			</h:form>
+		</div>
+		<div id="showingsContainer">
+			<h2 class="pageTitle">Showings</h2>
+			<p>Select a showing from the list below to book tickets.</p>
+			<h:form>
+				<div id="showings">
+					<ui:repeat var="showingDate" value="#{films.selectedFilm.getFutureShowingsDates()}">
+						<h4><h:outputText value="#{showingDate.getFormattedDate()}"/></h4>
+						<div class="showingTimes">
+							<ui:repeat var="showingTime" value="#{films.selectedFilm.getShowingsByDate(showingDate)}">
+								<h:commandButton class="showingTimeButton" action="null" value="#{showingTime.getFormattedTime()}"/>
+							</ui:repeat>
+						</div>
+					</ui:repeat>
+				</div>
+			</h:form>
+		</div>
+
+
+
 	</ui:define>
 
 </ui:composition>

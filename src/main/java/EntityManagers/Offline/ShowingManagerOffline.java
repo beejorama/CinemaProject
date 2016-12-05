@@ -1,6 +1,7 @@
 package EntityManagers.Offline;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -45,10 +46,11 @@ public class ShowingManagerOffline implements ShowingManager {
 		}
 	}
 
-	public void updateShowingTime(int id, Date input) {
+	public void updateShowingTime(int id, int hour, int minute) {
 		for(Showing s : dummyData.getShowings()){
 			if(s.getId() == id){
-				s.setTime(input);
+				s.getTime().set(Calendar.HOUR, hour);
+				s.getTime().set(Calendar.MINUTE, minute);
 				break;
 			}
 		}
