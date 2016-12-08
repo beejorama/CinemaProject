@@ -30,7 +30,7 @@
 						<h4 class="tileHeading">Cast: </h4><h:outputText value="#{film.actors}"/>
 						<h4 class="tileHeading">Description: </h4><h:outputText value="#{film.description}"/>
 					</div>
-					<h:commandButton class="bookButton" action="#{films.view(film)}" value="Book now!"/>
+					<h:commandButton class="bookButton" action="#{films.viewShowings(film)}" value="Book now!"/>
 				</div>
 			</h:form>
 		</ui:repeat>

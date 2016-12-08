@@ -1,53 +1,53 @@
 <!DOCTYPE html>
-<html lang="en"
-xmlns="https://www.w3.org/1999/xhtml"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:ui="http://java.sun.com/jsf/facelets">
-	<h:head>
-		<meta charset="utf-8"/>
-		<title><ui:insert name="title"/></title>
-		<link rel="stylesheet" href="style.css"/>
-	</h:head>
-	
-	<f:view>
-		<body>
-			<!-- Page header begins here -->
-			<header id="headerBar">
-				<div>
-					<a href="index.xhtml">
-						<img id="logo" src="img/logo.png"/>
-					</a>
-					<ul id="menu">
-						<li><a href="filmlist.xhtml">What's On?</a></li>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Contact</a></li>
-						<li class="last"><a href="#">Help</a></li>
-					</ul>
-				</div>
-			</header>
-	
-			<!-- Banner insert here, if needed -->
-			<div id="banner"><ui:insert name="banner"/></div>
-	
-			<div id="content">
-				<!-- UI Define -->
-				<div class="pageTitle">
-					<ui:insert name="pageHeading"/>
-				</div>
-	
-				<div id="contentMain">
-					<ui:insert name="pageContent"/>
-				</div>
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta charset="utf-8" />
+	<title><ui:insert name="title" /></title>
+	<link rel="stylesheet" href="style.css" />
+</h:head>
+
+<f:view>
+	<body>
+		<!-- Page header begins here -->
+		<header id="headerBar">
+			<div>
+				<a href="index.xhtml"> <img id="logo" src="img/logo.png" />
+				</a>
+
+				<ul id="fullmenu">
+					<li><a href="filmlist.xhtml">What's On?</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Contact</a></li>
+					<li class="last"><a href="#">Help</a></li>
+				</ul>
+
 			</div>
-	
-			<div id="footer">
-					<div class="mainList">
-						<div>Contact</div>
-						<div>Site Map</div>
-						<div>FAQ</div>
-					</div>
+		</header>
+
+		<!-- Banner insert here, if needed -->
+		<div id="banner">
+			<ui:insert name="banner" />
+		</div>
+
+		<div id="content">
+			<!-- UI Define -->
+			<div class="pageTitle">
+				<ui:insert name="pageHeading" />
 			</div>
-		</body>
-	</f:view>
+
+			<div id="contentMain">
+				<ui:insert name="pageContent" />
+			</div>
+		</div>
+
+		<div id="footer">
+			<div>Contact</div>
+			<div>Site Map</div>
+			<div>FAQ</div>
+		</div>
+	</body>
+</f:view>
 </html>

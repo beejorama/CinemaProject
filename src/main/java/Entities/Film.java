@@ -49,7 +49,10 @@ public class Film {
 	@Column(name = "actors")
 	private String actors;
 	
-	public Film(String title, String description, String director, String actors, int year, int runtime, String imgPath){
+	@Column(name = "trailer")
+	private String trailer;
+	
+	public Film(String title, String description, String director, String actors, int year, int runtime, String imgPath, String trailer){
 		this.title = title;
 		this.description = description;
 		this.director = director;
@@ -57,6 +60,7 @@ public class Film {
 		this.year = year;
 		this.runtime = runtime;
 		this.imgPath = imgPath;
+		this.trailer = trailer;
 		showings = new ArrayList<Showing>();
 	}
 	
@@ -250,6 +254,20 @@ public class Film {
 	 */
 	public void setActors(String actors) {
 		this.actors = actors;
+	}
+
+	/**
+	 * @return the trailer
+	 */
+	public String getTrailer() {
+		return trailer;
+	}
+
+	/**
+	 * @param trailer the trailer to set
+	 */
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
 	}
 
 }

@@ -1,10 +1,9 @@
 package Controllers;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -12,7 +11,7 @@ import Entities.Film;
 import service.FilmService;
 
 @Named("films")
-@RequestScoped
+@SessionScoped
 public class FilmController implements Serializable{
 	
 	@Inject
@@ -32,11 +31,13 @@ public class FilmController implements Serializable{
 	// Select a film to view
 	public String view(Film f){
 		selectedFilm = f;
-		return "filmdetail.xhtml";
+		return "filmdetail.xhtml?faces-redirect=true";
 	}
-
-	// Get film by id
 	
+	public String viewShowings(Film f){
+		selectedFilm = f;
+		return "filmdetail.xhtml?faces-redirect=true&id=showings";
+	}
 	
 	// Getters and setters
 	

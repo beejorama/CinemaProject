@@ -66,14 +66,13 @@ public class Showing {
 	}
 	
 	public String getFormattedDate(){
-		String returnDate = "";
-		returnDate = returnDate + time.get(Calendar.DAY_OF_MONTH) + "/" + (time.get(Calendar.MONTH)+1) + "/" + time.get(Calendar.YEAR);
+		String returnDate = String.format("%02d/%02d", time.get(Calendar.DAY_OF_MONTH), (time.get(Calendar.MONTH)+1));
+		returnDate = returnDate + "/" + time.get(Calendar.YEAR);
 		return returnDate;
 	}
 	
 	public String getFormattedTime(){
-		String returnTime = "";
-		returnTime = returnTime + time.get(Calendar.HOUR_OF_DAY) + ":" + time.get(Calendar.MINUTE);
+		String returnTime = String.format("%02d:%02d", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE));
 		return returnTime;
 	}
 	

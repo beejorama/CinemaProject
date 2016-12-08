@@ -13,6 +13,42 @@ h4{
 	margin: 0;
 }
 
+/*Responsiveness stuff*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.responsive *{
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/*End of responsiveness*/
+
+.centerh{
+	text-align: center;
+}
+
+/*Template stuff*/
 #headerBar{
 	background-color: #6A1111;
 	padding-top: 20px;
@@ -41,7 +77,7 @@ ul{
 	font-size: 0;
 }
 
-#menu{
+#fullmenu{
 	margin: 0px;
 	padding: 0px;
 	position: relative;
@@ -49,7 +85,7 @@ ul{
 	float: right;
 }
 
-#menu li{
+#fullmenu li{
 	display: inline-block;
 	font-size: 16px;
 	text-align: center;
@@ -57,29 +93,12 @@ ul{
 	border-right: solid 3px #801515;
 }
 
-#menu .last{
+#fullmenu .last{
 	border-right: 0; 
 }
 
-#menu li:hover a{
+#fullmenu li:hover a{
 	color: white;
-}
-
-#navigationContainer{
-	background-color: #550000;
-	width: 100% !important;
-	height: 25px;
-}
-
-#navigation{
-	width: 940px;
-}
-
-#bread{
-	float: right;
-	color: #ffdddd;
-	width: auto !important;
-	font-size: 14px;
 }
 
 a{
@@ -101,6 +120,7 @@ a:hover{
 	border-bottom: solid 3px #000000;
 }
 
+/*Content stuff*/
 #content{
 	background-color: #801515;
 	position: relative;
@@ -110,6 +130,7 @@ a:hover{
 	border-right: solid 2px #330000;
 	padding: 20px;
 	color: #FFDDDD;
+	height: 100%;
 }
 
 .pageTitle{
@@ -136,6 +157,9 @@ a:hover{
 .filmthumb{
 	height: 300px !important;
 	width: auto !important;
+}
+
+#whatsOnList .filmthumb{
 	float: left;
 	padding-left: 25px;
 	padding-right: 50px;
@@ -193,8 +217,14 @@ a:hover{
 	display: inline-block;
 }
 
+#filmBlurb .filmthumb{
+	float: left;
+	padding-left: 25px;
+	padding-right: 50px;
+}
+
 .showingTimes{
-	display: inline-block;
+	display: inline;
 }
 
 .showingTimeButton{
@@ -220,8 +250,6 @@ a:hover{
 #footer{
 	background-color: #6A1111;
 	text-align: center;
-	align-content: center;
-	width: 100%;
 	height: 50px;
 	color: #FFDDDD;
 	border-top: solid 3px #000000;

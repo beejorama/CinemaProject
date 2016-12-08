@@ -14,30 +14,26 @@
 
 	<ui:define name="pageContent">
 		<!-- zSWdZVtXT7E -->
+		<h:form>
 		<div class='embed-container'>
 			<iframe id="trailerIFrame"
-				src='https://www.youtube.com/embed/tGpTpVyI_OQ' frameborder='0'
+				src="#{films.selectedFilm.trailer}" frameborder='0'
 				allowfullscreen='1' modestbranding='1' rel='0' showinfo='0'>
-
-				<script type="text/javascript">
-   					document.getElementById('trailerIFrame').onload = function() {
-        				trailerIFrame.setAttribute("src", )
-    				}
-				</script>
 			</iframe>
 		</div>
+		</h:form>
 
 
 		<div id="filmBlurb">
 			<h:form>
-				<img class="filmthumb" src="#{film.imgPath}" />
+				<img class="filmthumb" src="#{films.selectedFilm.imgPath}" />
 				<div class="filmtext">
 					<h4 class="tileHeading">Director:</h4>
-					<h:outputText value="#{film.director}" />
+					<h:outputText value="#{films.selectedFilm.director}" />
 					<h4 class="tileHeading">Cast:</h4>
-					<h:outputText value="#{film.actors}" />
+					<h:outputText value="#{films.selectedFilm.actors}" />
 					<h4 class="tileHeading">Description:</h4>
-					<h:outputText value="#{film.description}" />
+					<h:outputText value="#{films.selectedFilm.description}" />
 				</div>
 			</h:form>
 		</div>
@@ -58,6 +54,17 @@
 			</h:form>
 		</div>
 
+		<div id="reviewssContainer">
+			<h2 class="pageTitle">Reviews</h2>
+			<h:form>
+				<div id="reviews">
+					<ui:repeat var="showingDate" value="#{films.selectedFilm.getFutureShowingsDates()}">
+
+					</ui:repeat>
+				</div>
+			</h:form>
+		</div>
+		
 
 
 	</ui:define>
